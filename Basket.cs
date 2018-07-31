@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class Basket : MonoBehaviour {
 
 int score;
-public Text Scoretext;
+public Text scoretext;
+public Text siegtext;
+
 
 	void OnCollisionEnter(Collision col){
 		if (col.gameObject.name == "gApple"){
@@ -22,20 +24,23 @@ public Text Scoretext;
 			score -= 5;
 			Destroy(col.gameObject);
 		}
-		//updateScore();
+		updateScore();
 		checkFinish();
 
 	}
 
 	void updateScore(){
-		Scoretext.text = "Score: " + score;
+		scoretext.text = "Score: " + score.ToString();
 	}
 
-	void checkFinish (){
-		if (score == 1){
-			Debug.Log("Du hast gewonnen");
-		}else if (score == -1){
-			Debug.Log("Computer sagt nein");
+	void checkFinish(){
+		if (score >= 1){
+			siegtext.text = "Du hast gewonnen!";
+			//Debug.Log("Du hast gewonnen");
+		}
+		if (score <= -1){
+			siegtext.text = "Du hast verloren. Versuche es nochmal.";
+			//Debug.Log("Computer sagt nein");
 			//SceneManager.LoadScene(this.scene);
 		}
 
@@ -44,9 +49,9 @@ public Text Scoretext;
 
 	// Use this for initialization
 	void Start () {
-
 		score = 0;
-		
+		updateScore();
+		siegtext.text = "";
 	}
 	
 	// Update is called once per frame
