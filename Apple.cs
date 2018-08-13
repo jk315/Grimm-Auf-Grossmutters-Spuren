@@ -8,6 +8,7 @@ public GameObject[] apple;
 public Transform spawnSpot;
 //int randomValue;
 int randomSpot;
+int randomSpotZ;
 int randomBool;
 int randomColor;
 float lastTime;
@@ -15,8 +16,9 @@ float lastTime;
 	void randomSpawn(){
 		//randomValue = Random.Range(0, apple.Length);
 		randomSpot = Random.Range(-4, 4);
+		randomSpotZ = Random.Range (-4, 4);
 		randomColor = Random.Range(0, 10);
-		spawnSpot.position = new Vector3(randomSpot, 10, 0);
+		spawnSpot.position = new Vector3(randomSpot, 10, randomSpotZ);
 
 		if (randomColor <=5){
 			GameObject green = Instantiate(apple[0], spawnSpot.position, spawnSpot.rotation);

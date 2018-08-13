@@ -10,7 +10,6 @@ int score;
 public Text scoretext;
 public Text siegtext;
 
-
 	void OnCollisionEnter(Collision col){
 		if (col.gameObject.name == "gApple"){
 			score += 1;
@@ -26,6 +25,7 @@ public Text siegtext;
 		}
 		updateScore();
 		checkFinish();
+
 
 	}
 
@@ -49,9 +49,11 @@ public Text siegtext;
 
 	// Use this for initialization
 	void Start () {
+
 		score = 0;
 		updateScore();
 		siegtext.text = "";
+		
 	}
 	
 	// Update is called once per frame
@@ -74,7 +76,22 @@ public Text siegtext;
 	     }
         }
 
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+	    if (this.transform.position.z != -4){
+	   	 var offset = new Vector3(0f, 0f, -1f);
+           	 this.transform.position += offset;
+	     }
+        }
 
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+	    if (this.transform.position.z != 4){
+	   	 var offset = new Vector3(0f, 0f, 1f);
+           	 this.transform.position += offset;
+	     }
+        }
+	checkFinish();
 
 		
 	}
