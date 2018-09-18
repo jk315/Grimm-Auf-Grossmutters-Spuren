@@ -16,7 +16,7 @@ float lastTime;
 	void randomSpawn(){
 		//randomValue = Random.Range(0, apple.Length);
 		randomSpot = Random.Range(-4, 4);
-		randomSpotZ = Random.Range (-4, 4);
+		randomSpotZ = Random.Range(-4, 4);
 		randomColor = Random.Range(0, 10);
 		spawnSpot.position = new Vector3(randomSpot, 10, randomSpotZ);
 

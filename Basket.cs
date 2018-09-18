@@ -10,6 +10,7 @@ int score;
 public Text scoretext;
 public Text siegtext;
 
+
 	void OnCollisionEnter(Collision col){
 		if (col.gameObject.name == "gApple"){
 			score += 1;
@@ -26,7 +27,6 @@ public Text siegtext;
 		updateScore();
 		checkFinish();
 
-
 	}
 
 	void updateScore(){
@@ -34,11 +34,11 @@ public Text siegtext;
 	}
 
 	void checkFinish(){
-		if (score >= 1){
+		if (score >= 20){
 			siegtext.text = "Du hast gewonnen!";
 			//Debug.Log("Du hast gewonnen");
 		}
-		if (score <= -1){
+		if (score <= -20){
 			siegtext.text = "Du hast verloren. Versuche es nochmal.";
 			//Debug.Log("Computer sagt nein");
 			//SceneManager.LoadScene(this.scene);
@@ -49,17 +49,15 @@ public Text siegtext;
 
 	// Use this for initialization
 	void Start () {
-
 		score = 0;
 		updateScore();
 		siegtext.text = "";
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.A))
+         if (Input.GetKeyDown(KeyCode.A))
         {
             // Debug.Log("A pressed");
 	    if (this.transform.position.x != -4){
