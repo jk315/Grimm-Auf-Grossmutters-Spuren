@@ -38,8 +38,9 @@ public Text siegtext;
 			siegtext.text = "Du hast gewonnen!";
 			//Debug.Log("Du hast gewonnen");
 		}
-		if (score <= -20){
+		if (score <= -10){
 			siegtext.text = "Du hast verloren. Versuche es nochmal.";
+			SceneManager.LoadScene("SampleScene");
 			//Debug.Log("Computer sagt nein");
 			//SceneManager.LoadScene(this.scene);
 		}
