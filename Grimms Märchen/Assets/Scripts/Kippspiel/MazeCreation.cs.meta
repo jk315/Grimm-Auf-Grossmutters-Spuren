@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 146cc977233c481439c35f510f3c01e5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - wall: {fileID: 1464912201257242, guid: 9573bd32c7b96c9469c875a61e1a5c4b, type: 2}
+  - maze: {instanceID: 0}
+  - mazeO: {instanceID: 0}
+  - mazeU: {instanceID: 0}
+  - mazeB1: {instanceID: 0}
+  - mazeB3: {instanceID: 0}
+  - mazeB2: {instanceID: 0}
+  - mazeB4: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
